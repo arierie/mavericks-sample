@@ -1,4 +1,4 @@
-# Simple app with MVRX implementation and new Android JetPack#
+# Simple app with MVRX implementation and new Android JetPack #
 
 ## MvRx: Android on Autopilot ##
 
