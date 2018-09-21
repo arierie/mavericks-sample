@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="id.arieridwan.maverickssample.ui.homepage.HomePageFragment">
+
+        <action
+            android:id="@+id/action_main_to_detailMovieFragment"
+            app:destination="@id/detailMoviesFragment"
+            app:enterAnim="@anim/anim_enter"
+            app:exitAnim="@anim/anim_exit"
+            app:popEnterAnim="@anim/anim_pop_enter"
+            app:popExitAnim="@anim/anim_pop_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailMoviesFragment"
+        android:name="id.arieridwan.maverickssample.ui.detailmovie.DetailMovieFragment" />
+
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="id.arieridwan.maverickssample.ui.explore.ExploreFragment" />
+
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="id.arieridwan.maverickssample.ui.favourite.FavouriteFragment" />
+
+</navigation>
