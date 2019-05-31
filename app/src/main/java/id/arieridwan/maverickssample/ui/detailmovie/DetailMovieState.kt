@@ -1,12 +1,10 @@
 package id.arieridwan.maverickssample.ui.detailmovie
 
-import android.annotation.SuppressLint
 import android.os.Parcelable
 import com.airbnb.mvrx.MvRxState
 import id.arieridwan.maverickssample.data.response.MovieResponse
 import kotlinx.android.parcel.Parcelize
 
-@SuppressLint("ParcelCreator")
 @Parcelize
 data class DetailMovieArgs(val id: Int, val movie: MovieResponse) : Parcelable
 

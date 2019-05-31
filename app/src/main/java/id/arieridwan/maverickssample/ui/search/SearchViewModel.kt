@@ -1,16 +1,13 @@
 package id.arieridwan.maverickssample.ui.search
 
-import com.airbnb.mvrx.BaseMvRxViewModel
+import id.arieridwan.maverickssample.core.MvRxViewModel
 
 /**
  * Created by arieridwan on 31/08/18.
  */
 
-class SearchViewModel(initialState: SearchState) : BaseMvRxViewModel<SearchState>(initialState) {
+class SearchViewModel(initialState: SearchState) : MvRxViewModel<SearchState>(initialState) {
 
-
-    init {
-
-    }
+    init { }
 
 }

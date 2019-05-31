@@ -1,7 +1,6 @@
 package id.arieridwan.maverickssample.ui.detailmovie
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,10 +15,6 @@ import id.arieridwan.maverickssample.util.CommonUtil.Companion.loadImageWithUrl
 import kotlinx.android.synthetic.main.fragment_detail_movie.*
 import kotlinx.android.synthetic.main.fragment_detail_movie.view.*
 
-/**
- * A simple [Fragment] subclass.
- *
- */
 class DetailMovieFragment : BaseMvRxFragment() {
 
     private val mViewModel: DetailMovieViewModel by fragmentViewModel()

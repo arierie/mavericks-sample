@@ -2,10 +2,10 @@ package id.arieridwan.maverickssample.core
 
 import android.os.Bundle
 import android.os.Parcelable
-import android.support.annotation.IdRes
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.IdRes
 import androidx.navigation.fragment.findNavController
 import com.airbnb.mvrx.BaseMvRxFragment
 import com.airbnb.mvrx.MvRx

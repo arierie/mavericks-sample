@@ -7,7 +7,7 @@ import io.reactivex.Observable
 
 class MovieRepository(private val apiService: ApiService) {
 
-    fun loadMovies(category: String, page: Int): Observable<MovieListResponse> =
+    fun loadMoviesFromNetwork(category: String, page: Int): Observable<MovieListResponse> =
             apiService.getMovies(category, BuildConfig.ApiKey, page)
 
 }

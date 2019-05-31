@@ -1,7 +1,3 @@
 package id.arieridwan.maverickssample.widget
 
-class SearchHeaderRow {
-
-
-
-}
+class SearchHeaderRow

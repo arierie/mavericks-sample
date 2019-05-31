@@ -1,13 +1,13 @@
 package id.arieridwan.maverickssample.ui.homepage
 
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.View
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.airbnb.epoxy.EpoxyController
 import com.airbnb.mvrx.fragmentViewModel
+import com.airbnb.mvrx.withState
 import id.arieridwan.maverickssample.core.BaseFragment
 import id.arieridwan.maverickssample.core.simpleController
 import id.arieridwan.maverickssample.util.CommonUtil.Companion.HOME_TAG
@@ -16,7 +16,10 @@ import id.arieridwan.maverickssample.ui.detailmovie.DetailMovieArgs
 import id.arieridwan.maverickssample.util.CommonUtil.Companion.CAT_POPULAR
 import id.arieridwan.maverickssample.util.CommonUtil.Companion.SPAN_COUNT
 import id.arieridwan.maverickssample.widget.*
+import kotlinx.android.synthetic.main.fragment_detail_movie.*
+import kotlinx.android.synthetic.main.fragment_detail_movie.marquee
 import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.marquee.*
 
 class HomePageFragment: BaseFragment() {
 
@@ -25,7 +28,7 @@ class HomePageFragment: BaseFragment() {
     override fun resLayout(): Int = R.layout.fragment_main
 
     private fun initView() {
-        val layoutManager = GridLayoutManager(context, SPAN_COUNT, LinearLayoutManager.VERTICAL, false)
+        val layoutManager = GridLayoutManager(context, SPAN_COUNT)
         epoxyController.spanCount = SPAN_COUNT
         layoutManager.spanSizeLookup = epoxyController.spanSizeLookup
         recycler_view.layoutManager = layoutManager
@@ -39,10 +42,10 @@ class HomePageFragment: BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
-        mViewModel.asyncSubscribe(HomePageState::request, {
+        mViewModel.asyncSubscribe(HomePageState::request, onFail = {
             Log.e(HOME_TAG, "Movies request failed ${it.message}")
             mViewModel.fetchMovies("popular")
-        }, {
+        }, onSuccess = {
             invalidate()
         })
     }
